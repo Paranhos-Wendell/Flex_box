@@ -1,0 +1,178 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+a{
+    text-decoration: none;
+    color:#fff;
+}
+
+body{
+    margin-bottom:100px ;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+.header{
+    background: #1d1e20;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+.menu{
+    display: flex;
+    
+}
+
+.menu li{
+    margin-left: 10px;
+
+}
+
+.menu li a{
+    display: block;
+    padding: 10px;  
+}
+
+h1{
+    text-align: center;
+    margin: 100px;
+}
+
+/*Flex-box*/
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex > article{
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+/*Grid-layout*/
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+    grid-gap: 20px;
+}
+
+.grid > article:nth-child(N + 4){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.grid > article.anuncio{
+    grid-column: 1;
+    grid-row: 2 / 5;
+    display: block;
+    border-top: 10px solid blue;
+}
+
+@media(max-width:600px){
+
+    .grid{
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+    .grid > article:nth-child(n + 4){
+        display: block;
+    }
+
+    .grid > article.anuncio{
+        grid-column: auto;
+        grid-row: auto;
+        order: -1;
+    }
+
+    
+}
+
+
+/*Grid-layout 1*/
+
+.grid1{
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-gap: 20px;
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.sidebar > article{
+    margin-bottom: 10px;
+}
+
+@media(max-width:600px){
+    .grid1{
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar{
+        display: flex;
+        overflow: scroll;
+    }
+
+    .sidebar > article{
+        flex:  1 0 200px;
+        margin: 0 10px;
+    }
+
+}
+
+
+/*Grid-layout 2*/
+
+.grid2{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 10px;
+}
+
+.grid-itens:nth-child(1){
+    grid-row: 1 / 3;
+}
+
+.grid-itens{
+    display: grid;
+
+}
+
+.grid-itens img{
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: end;
+}
+
+.grid-itens p{
+    background: rgba(0,0,0,0.6);
+    padding: 10px;
+    color: #fff;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+}
